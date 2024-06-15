@@ -1,0 +1,59 @@
+STEPS FOR CREATING A SUPERUSER.....
+
+1. Open a Terminal in VS Code: Ensure your virtual environment is activated.
+2. Run the Createsuperuser Command --> python manage.py createsuperuser
+
+Example of Creating a Superuser..
+
+Username (leave blank to use 'yourusername'): admin
+Email address: admin@example.com
+Password: ********
+Password (again): ********
+Superuser created successfully.
+
+Logging into the Admin Page..
+
+* Open the Admin Page: Navigate to http://127.0.0.1:8000/admin/ in your web browser.
+* Enter Credentials: Use the username and password you set when creating the superuser.
+
+#############################################################################################################################
+
+--------IF U GOT ANY ERRORS WHILE CREATING THIS MEANS RUN THE BELOW COMMANDS--------------
+
+1.Steps to Follow
+	Activate Virtual Environment: On Windows: venv\Scripts\activate
+			      On macOS and Linux: source venv/bin/activate
+
+2.Apply Migrations: python manage.py migrate
+
+##############################################################################################################################
+
+python manage.py shell
+
+from django.contrib.auth.models import User
+
+User.objects.create(username="Something", password="######")
+User.objects.create(username="Something", password="######")
+User.objects.create(username="Something", password="######")
+User.objects.create(username="Something", password="######")
+#(username should be unique)
+
+from myapp.models import *
+Post.objects.create(title="p1", content="c1", author=User.objects.get_by_natural_key("Some string"))
+Post.objects.create(title="p2", content="c2", author=User.objects.get_by_natural_key("Some string"))
+Post.objects.create(title="p3", content="c3", author=User.objects.get_by_natural_key("Some string"))
+Post.objects.create(title="p4", content="c4", author=User.objects.get_by_natural_key("Some string"))
+
+
+
+
+
+
+
+
+
+
+
+
+															
+
